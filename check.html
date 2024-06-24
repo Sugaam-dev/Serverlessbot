@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .popup.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .popup-content {
+            background: linear-gradient(135deg, #6025F5, #9C1DB3);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+        .popup-content h1, .popup-content p {
+            margin: 10px 0;
+        }
+        .popup-content input[type="text"], .popup-content input[type="email"] {
+            width: calc(50% - 10px);
+            padding: 10px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        .popup-content input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .popup-content .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .reopen-btn {
+            background-color: purple;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+        @media (max-width: 375px) {
+            .popup-content input[type="text"], .popup-content input[type="email"] {
+                width: calc(100% - 20px);
+                margin: 10px 0;
+            }
+            .popup-content .close-btn {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">×</button>
+            <h1>Unlock Your Digital Potential with SUGAAM!</h1>
+            <p>Special Offer: Get a FREE Customized AI Chatbot with Any Website Development Project!</p>
+            <p>Enhance your customer engagement and streamline your business operations with our cutting-edge AI chatbot, tailored specifically for your needs. Don't miss out on this limited-time offer!</p>
+            <p>Offer valid for a limited time only. Terms and conditions apply.</p>
+            <form id="popup-form" action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="POST" target="_blank">
+                <input type="text" name="entry.YOUR_NAME_FIELD_ID" placeholder="Your name" required>
+                <input type="text" name="entry.YOUR_PHONE_FIELD_ID" placeholder="Phone number" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <button class="reopen-btn" id="reopen-btn" onclick="openPopup()">See Offers</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            openPopup();
+        });
+
+        function openPopup() {
+            document.getElementById('popup').classList.add('active');
+            document.getElementById('reopen-btn').style.display = 'none';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').classList.remove('active');
+            document.getElementById('reopen-btn').style.display = 'block';
+        }
+
+        document.getElementById('popup').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        document.getElementById('popup-form').addEventListener('submit', function (e) {
+            var name = this.querySelector('input[name="entry.YOUR_NAME_FIELD_ID"]').value;
+            var phone = this.querySelector('input[name="entry.YOUR_PHONE_FIELD_ID"]').value;
+            
+            
+            if (name === "" || phone === "" ) {
+                e.preventDefault();
+                alert("Please fill in all fields");
+            }
+        });
+    </script>
+</body>
+</html>
