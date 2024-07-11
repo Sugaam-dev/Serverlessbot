@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
     ];
 
     if (creatorQuestionPhrases.some(phrase => message.toLowerCase().includes(phrase))) {
-      return res.status(200).json({ message: 'The Devs of Sugaam did.' });
+      return res.status(200).json({ message: 'The Devs of Sugaam.' });
     }
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
         model: 'gpt-3.5-turbo',
         messages: [
           { role: 'system', content: 'You are a helpful assistant.' },
-          { role: 'system', content: 'Welcome to SUGAAM, where we offer a synergy of efficiency and affordability to optimize your business operations. Our comprehensive services are designed to meet the diverse needs of modern businesses, including IT Consulting, Software Services, AI Services, Process Revamping, Web & App Design, E-Commerce Development, Content Management Systems (CMS), Search Engine Optimization (SEO), UI/UX Design, Mobile Development, MLOps, Machine Learning, and Cloud Migration Assessment. Contact us at www.sugaam.in, email us at info@sugaam.in, or call +91 - 7722017100. Visit us at Ganga Trueno Business Park, Air Force Area, New Airport Rd, Viman Nagar, Pune, Maharashtra 411014. © 2024 ALL RIGHTS RESERVED BY SUGAAM.' },
+          { role: 'system', content: 'Welcome to SUGAAM, where we offer a synergy of efficiency and affordability to optimize your business operations. Our comprehensive services are designed to meet the diverse needs of modern businesses, including IT Consulting, Software Services, AI Services, Process Revamping, Web & App Design, E-Commerce Development, Content Management Systems (CMS), Search Engine Optimization (SEO), UI/UX Design, Mobile Development, MLOps, Machine Learning, and Cloud Migration Assessment. Contact us at www.sugaam.in, email us at info@sugaam.in, or call +91 - 7722017100. Visit us at Ganga Trueno Business Park, Air Force Area, New Airport Rd, Viman Nagar, Pune, Maharashtra 411014.' },
           { role: 'user', content: message }
         ],
         max_tokens: 150
@@ -51,6 +51,10 @@ module.exports = async (req, res) => {
     }
 
     const data = await response.json();
+
+    if (!data.choices || data.choices.length === 0) {
+      throw new Error('No choices returned from OpenAI API');
+    }
 
     // Check if the response from OpenAI contains phrases that indicate uncertainty
     const uncertaintyPhrases = [
