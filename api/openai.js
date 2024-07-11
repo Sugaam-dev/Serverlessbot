@@ -62,14 +62,7 @@ module.exports = async (req, res) => {
       return res.status(200).json({ message: contactInfo });
     }
 
-    // Check if the user asked about who made the chatbot
-    if (message.toLowerCase().includes("who made you") || 
-        message.toLowerCase().includes("who created you") || 
-        message.toLowerCase().includes("who developed you") || 
-        message.toLowerCase().includes("who built you")) {
-      return res.status(200).json({ message: 'The Devs of Sugaam.' });
-    }
-
+    // If everything is fine, respond with the OpenAI's response
     res.status(200).json(data);
   } catch (error) {
     console.error('Error sending message to OpenAI:', error);
