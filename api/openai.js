@@ -17,17 +17,6 @@ module.exports = async (req, res) => {
     }
 
     const contactInfo = 'You can contact us for more information at www.sugaam.in, email us at info@sugaam.in, or call +91 - 7722017100.';
-    
-    const creatorQuestionPhrases = [
-      "who made you",
-      "who created you",
-      "who developed you",
-      "who built you"
-    ];
-
-    if (creatorQuestionPhrases.some(phrase => message.toLowerCase().includes(phrase))) {
-      return res.status(200).json({ message: 'The Devs of Sugaam.' });
-    }
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -71,6 +60,14 @@ module.exports = async (req, res) => {
 
     if (isUncertain) {
       return res.status(200).json({ message: contactInfo });
+    }
+
+    // Check if the user asked about who made the chatbot
+    if (message.toLowerCase().includes("who made you") || 
+        message.toLowerCase().includes("who created you") || 
+        message.toLowerCase().includes("who developed you") || 
+        message.toLowerCase().includes("who built you")) {
+      return res.status(200).json({ message: 'The Devs of Sugaam.' });
     }
 
     res.status(200).json(data);
