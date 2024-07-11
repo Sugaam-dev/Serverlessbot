@@ -52,8 +52,9 @@ module.exports = async (req, res) => {
 
     const data = await response.json();
 
-    if (!data.choices || data.choices.length === 0) {
-      throw new Error('No choices returned from OpenAI API');
+    // Check if data.choices is valid
+    if (!data.choices || !data.choices[0] || !data.choices[0].message || !data.choices[0].message.content) {
+      throw new Error('Invalid response structure from OpenAI API');
     }
 
     // Check if the response from OpenAI contains phrases that indicate uncertainty
