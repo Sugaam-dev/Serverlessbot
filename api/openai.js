@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-
+require('dotenv').config();
 module.exports = async (req, res) => {
   try {
     if (req.method !== 'POST') {

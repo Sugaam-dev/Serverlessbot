@@ -175,14 +175,14 @@
   width:45px;
   height: 30px;
   border-radius:50%;
-  float:left;
+  float:right;
   width:15%;
 }
 .chat-msg.self > .msg-avatar img {
   width:45px;
   height:50px;
   border-radius:50%;
-  float:left;
+  float:right;
   width:15%;
 }
 .cm-msg-text {
@@ -200,7 +200,7 @@
   clear:both;    
 }
 .chat-msg.self > .cm-msg-text {  
-  float:left;
+  float:right;
   margin-right:10px;
   background: #5A5EB9;
   color:white;
