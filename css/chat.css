@@ -172,17 +172,17 @@
 }
 
 .chat-msg.user > .msg-avatar img {
-  width:45px important;
+  width:45px;
   height: 30px;
   border-radius:50%;
-  float:right;
+  float:left;
   width:15%;
 }
 .chat-msg.self > .msg-avatar img {
   width:45px;
   height:50px;
   border-radius:50%;
-  float:right;
+  float:left;
   width:15%;
 }
 .cm-msg-text {
@@ -200,7 +200,7 @@
   clear:both;    
 }
 .chat-msg.self > .cm-msg-text {  
-  float:right;
+  float:left;
   margin-right:10px;
   background: #5A5EB9;
   color:white;
@@ -213,7 +213,4 @@
 .cm-msg-button {
     clear: both;
     margin-bottom: 70px;
-}
-.msg-avatar{
-  float:right;
 }
