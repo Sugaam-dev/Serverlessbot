@@ -35,7 +35,7 @@ $(function() {
 
   function generate_message(msg, type) {
     INDEX++;
-    var avatar = (type === 'self') ? "boy.png" : "chatbot.png";
+    var avatar = (type === 'self') ? "user.png" : "chatbot.png";
     var str = "";
     str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + "\">";
     str += "          <span class=\"msg-avatar\">";
