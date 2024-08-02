@@ -557,9 +557,11 @@
   <!-- jQuery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      openCorrectPopup();
-    });
+//     document.addEventListener('DOMContentLoaded', function() {
+//   if (!document.getElementById('popup-desktop').classList.contains('active')) {
+//     openCorrectPopup();
+//   }
+// });
 
     function openCorrectPopup() {
       var screenWidth = window.innerWidth;
@@ -588,6 +590,9 @@
       if (e.target === this) {
         closePopup('popup-mobile');
       }
+    });
+    window.addEventListener('load', function () {
+      setTimeout(openCorrectPopup, 9000); // Delay of 9 seconds before showing the popup
     });
   </script>
 
