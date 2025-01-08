@@ -1,40 +1,11 @@
 $(function() {
   var INDEX = 0;
 
-  // Error handling message configuration
-  const ERROR_MESSAGE = {
-    text: "System is under update, please try after sometime. Meanwhile, you can contact us at info@sugaam.in",
-    duration: 5000 // Message display duration in milliseconds
-  };
+  
 
   // Function to display error message
   function showErrorMessage(error) {
     console.error('Chatbot Error:', error);
-    
-    // Create error message element if it doesn't exist
-    if (!$('#chat-error-message').length) {
-      $('body').append(`
-        <div id="chat-error-message" style="display: none; position: fixed; top: 20px; right: 20px; 
-          background-color: #ff5757; color: white; padding: 15px; border-radius: 5px; 
-          box-shadow: 0 2px 5px rgba(0,0,0,0.2); max-width: 300px; z-index: 10000;">
-          ${ERROR_MESSAGE.text}
-        </div>
-      `);
-    }
-
-    // Show error message with fade effect
-    $('#chat-error-message')
-      .fadeIn(300)
-      .delay(ERROR_MESSAGE.duration)
-      .fadeOut(300);
-
-    // Disable chat input during error state
-    $("#chat-input").attr("disabled", true);
-    
-    // Re-enable chat input after a delay
-    setTimeout(() => {
-      $("#chat-input").attr("disabled", false);
-    }, ERROR_MESSAGE.duration);
   }
 
   // Enhanced sendMessageToBackend with better error handling
@@ -64,7 +35,7 @@ $(function() {
 
     } catch (error) {
       showErrorMessage(error);
-      generate_message("I apologize, but I'm having trouble processing your request right now.", 'bot');
+      generate_message("System is under update, please try after sometime. Meanwhile, you can contact us at info@sugaam.in", 'bot');
     }
   }
 
