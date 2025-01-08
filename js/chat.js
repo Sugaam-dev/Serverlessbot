@@ -35,7 +35,7 @@ $(function() {
 
     } catch (error) {
       showErrorMessage(error);
-      generate_message("System is under update, please try after sometime. Meanwhile, you can contact us at info@sugaam.in", 'bot');
+      generate_message("System is under update, please try after sometime. Meanwhile, you can contact us at <br> email: info@sugaam.in <br> phone no.: +91-7722017100", 'bot');
     }
   }
 
