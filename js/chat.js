@@ -3,7 +3,7 @@ $(function() {
 
   // Error handling message configuration
   const ERROR_MESSAGE = {
-    text: "System is under update, please try after sometime. Meanwhile, you can contact us at info.sugaam@gmail.com",
+    text: "System is under update, please try after sometime. Meanwhile, you can contact us at info@sugaam.in",
     duration: 5000 // Message display duration in milliseconds
   };
 
