@@ -457,10 +457,7 @@ a:focus {
       margin-top: 15px;
     }
 
-    a {
-      @include hero_btn($primary2, $white, 10px, 45px, 5px);
-      margin-top: 15px;
-    }
+    
   }
 }
 
