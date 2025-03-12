@@ -1,0 +1,97 @@
+|-- .hintrc
+|-- .htaccess
+|-- about.html
+|-- api
+    |-- openai.js
+|-- career.html
+|-- chatbot.png
+|-- contact.html
+|-- css
+    |-- bootstrap.css
+    |-- chat.css
+    |-- font-awesome.min.css
+    |-- responsive.css
+    |-- style.css
+    |-- style.css.map
+    |-- style.scss
+|-- fonts
+    |-- fontawesome-webfont.ttf
+    |-- fontawesome-webfont.woff
+    |-- fontawesome-webfont.woff2
+|-- images
+    |-- 3 (1).png
+    |-- 4 (1).png
+    |-- 4.png
+    |-- about-img.png
+    |-- about-img.webp
+    |-- boy.png
+    |-- call.png
+    |-- career.jpg
+    |-- case-1 (1).jpg
+    |-- case-1.jpg
+    |-- case-1.webp
+    |-- case-2.jpg
+    |-- case-3.jpg
+    |-- chatbot.png
+    |-- chatbox.jpg
+    |-- chatbox1.png
+    |-- chatbox2.png
+    |-- chatboxx.jpg
+    |-- contact-img.png
+    |-- home.jpg
+    |-- home.webp
+    |-- home1.png
+    |-- home1.webp
+    |-- img-2.jpeg
+    |-- img-advet.png
+    |-- img-dhanashree.png
+    |-- img-ghosh.png
+    |-- img-mishra.png
+    |-- img-pramir.png
+    |-- img-seema.png
+    |-- img-shilpa.jpeg
+    |-- img-shilpa.png
+    |-- img-shilpa2.jpeg
+    |-- img-shilpa3.jpeg
+    |-- img-sonal.png
+    |-- img.png
+    |-- IMG_1217.JPG
+    |-- img_shilpa.png
+    |-- lean-principles.png
+    |-- logo.png
+    |-- logo1.png
+    |-- logo2.png
+    |-- logo3.png
+    |-- oE.jpg
+    |-- pamir.jpg
+    |-- pop.png
+    |-- Rohit1.png
+    |-- s1.png
+    |-- s1.webp
+    |-- s2.png
+    |-- s2.webp
+    |-- s21.png
+    |-- s22.png
+    |-- s23.png
+    |-- s24.png
+    |-- s3.png
+    |-- s3.webp
+    |-- s4.png
+    |-- s4.webp
+    |-- slider-bg.jpg
+    |-- slider-img.png
+    |-- user.png
+|-- index.html
+|-- intern.html
+|-- js
+    |-- bootstrap.js
+    |-- chat.js
+    |-- custom.js
+    |-- jquery-3.4.1.min.js
+    |-- script.js
+|-- package-lock.json
+|-- package.json
+|-- README.md
+|-- robots.txt
+|-- service.html
+|-- sitemap.xml
